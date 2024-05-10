@@ -24,6 +24,7 @@ class TaskRepository(application: Application) {
     private val taskDao = TaskDatabase.getInstance(application).taskDao
 
 
+    // Task State Flow
     private val _taskStateFlow = MutableStateFlow<Resource<Flow<List<Task>>>>(Loading())
     val taskStateFlow: StateFlow<Resource<Flow<List<Task>>>>
         get() = _taskStateFlow
@@ -33,6 +34,7 @@ class TaskRepository(application: Application) {
         get() = _statusLiveData
 
 
+    // Sort By LiveData
     private val _sortByLiveData = MutableLiveData<Pair<String,Boolean>>().apply {
         postValue(Pair("title",true))
     }
@@ -40,6 +42,7 @@ class TaskRepository(application: Application) {
         get() = _sortByLiveData
 
 
+    // Set Sort By
     fun setSortBy(sort:Pair<String,Boolean>){
         _sortByLiveData.postValue(sort)
     }
@@ -62,6 +65,7 @@ class TaskRepository(application: Application) {
     }
 
 
+    // Insert Task
     fun insertTask(task: Task) {
         try {
             _statusLiveData.postValue(Loading())
@@ -75,6 +79,7 @@ class TaskRepository(application: Application) {
     }
 
 
+    // Delete Task
     fun deleteTask(task: Task) {
         try {
             _statusLiveData.postValue(Loading())
@@ -88,6 +93,7 @@ class TaskRepository(application: Application) {
         }
     }
 
+    // Delete Task Using Id
     fun deleteTaskUsingId(taskId: String) {
         try {
             _statusLiveData.postValue(Loading())
@@ -102,6 +108,7 @@ class TaskRepository(application: Application) {
     }
 
 
+    // Update Task
     fun updateTask(task: Task) {
         try {
             _statusLiveData.postValue(Loading())
@@ -115,6 +122,7 @@ class TaskRepository(application: Application) {
         }
     }
 
+    // Update Task Particular Field
     fun updateTaskPaticularField(taskId: String, title: String, description: String) {
         try {
             _statusLiveData.postValue(Loading())
@@ -128,6 +136,7 @@ class TaskRepository(application: Application) {
         }
     }
 
+    // Search Task List
     fun searchTaskList(query: String) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -141,6 +150,7 @@ class TaskRepository(application: Application) {
     }
 
 
+    // Handle Result
     private fun handleResult(result: Int, message: String, statusResult: StatusResult) {
         if (result != -1) {
             _statusLiveData.postValue(Success(message, statusResult))

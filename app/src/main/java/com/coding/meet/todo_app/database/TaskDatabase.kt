@@ -9,16 +9,19 @@ import com.coding.meet.todo_app.converters.TypeConverter
 import com.coding.meet.todo_app.dao.TaskDao
 import com.coding.meet.todo_app.models.Task
 
+// Task Database
 @Database(
     entities = [Task::class],
     version = 1,
     exportSchema = false
 )
+// Type Converter
 @TypeConverters(TypeConverter::class)
 abstract class TaskDatabase : RoomDatabase() {
 
     abstract val taskDao : TaskDao
 
+    // Companion Object
     companion object {
         @Volatile
         private var INSTANCE: TaskDatabase? = null

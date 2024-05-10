@@ -20,6 +20,7 @@ class TaskRVVBListAdapter(
 
 
 
+    // List ViewHolder
     class ListTaskViewHolder(private val viewTaskListLayoutBinding: ViewTaskListLayoutBinding) :
         RecyclerView.ViewHolder(viewTaskListLayoutBinding.root) {
 
@@ -48,6 +49,7 @@ class TaskRVVBListAdapter(
     }
 
 
+    // Grid ViewHolder
     class GridTaskViewHolder(private val viewTaskGridLayoutBinding: ViewTaskGridLayoutBinding) :
         RecyclerView.ViewHolder(viewTaskGridLayoutBinding.root) {
 
@@ -76,6 +78,7 @@ class TaskRVVBListAdapter(
     }
 
 
+    // Create ViewHolder
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -99,6 +102,7 @@ class TaskRVVBListAdapter(
         }
     }
 
+    // Bind ViewHolder
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val task = getItem(position)
 
@@ -118,8 +122,7 @@ class TaskRVVBListAdapter(
         }
     }
 
-
-
+    // DiffUtil Callback
     class DiffCallback : DiffUtil.ItemCallback<Task>() {
         override fun areItemsTheSame(oldItem: Task, newItem: Task): Boolean {
             return oldItem.id == newItem.id

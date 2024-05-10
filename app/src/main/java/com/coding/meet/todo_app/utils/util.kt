@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 
+// Status
 enum class Status{
     SUCCESS,
     ERROR,
@@ -21,6 +22,7 @@ enum class StatusResult{
     Deleted
 }
 
+// Resource
 fun Context.hideKeyBoard(view : View){
     try {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -30,10 +32,12 @@ fun Context.hideKeyBoard(view : View){
     }
 }
 
+// Short Toast
 fun Context.longToastShow(msg:String){
     Toast.makeText(this,msg,Toast.LENGTH_LONG).show()
 }
 
+// Short Toast
 fun Dialog.setupDialog(layoutResId: Int){
     setContentView(layoutResId)
     window!!.setLayout(
@@ -43,6 +47,7 @@ fun Dialog.setupDialog(layoutResId: Int){
     setCancelable(false)
 }
 
+// Validate EditText
 fun validateEditText(editText: EditText, textTextInputLayout: TextInputLayout): Boolean {
     return when {
         editText.text.toString().trim().isEmpty() -> {
@@ -55,6 +60,7 @@ fun validateEditText(editText: EditText, textTextInputLayout: TextInputLayout): 
         }
     }
 }
+// Clear EditText
 fun clearEditText(editText: EditText, textTextInputLayout: TextInputLayout) {
     editText.text = null
     textTextInputLayout.error = null
