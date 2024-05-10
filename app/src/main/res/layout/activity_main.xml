@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainBackgroundColor"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -25,8 +25,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
-                android:text="Welcome Back"
-                android:textSize="24sp"
+                android:text="Hello"
+                android:textColor="@color/blue"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -37,6 +38,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="4dp"
                 android:text="Today's Task"
+                android:textColor="@color/blue"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -62,7 +64,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_view_list"
-                    app:tint="@color/black" />
+                    app:tint="@color/blue" />
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout

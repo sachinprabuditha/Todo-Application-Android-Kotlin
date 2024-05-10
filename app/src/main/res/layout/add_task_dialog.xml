@@ -85,8 +85,7 @@
                 android:layout_height="?actionBarSize"
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp"
-                android:backgroundTint="@color/black"
-                style="@style/Widget.App.Button.Fill"
+                android:backgroundTint="@color/blue"
                 android:text="Save Task"
                 android:textSize="20sp" />
         </LinearLayout>
