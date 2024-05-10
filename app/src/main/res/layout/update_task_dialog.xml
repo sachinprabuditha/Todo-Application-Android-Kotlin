@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/CardViewStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
@@ -17,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="Update Task"
+            android:textColor="@color/blue"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:layout_below="@id/titleTaskTxt"
-            android:background="@color/black" />
+            android:background="@color/blue" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,13 +49,13 @@
                 android:id="@+id/edTaskTitleL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter The Task Title">
+                android:hint="Enter the Task Title">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edTaskTitle"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:background="#EAE4E8"
+                    android:background="#E0F6F1"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -65,13 +65,14 @@
                 android:id="@+id/edTaskDescL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter The Task Description">
+                android:hint="Enter the Task Description"
+                app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edTaskDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EAE4E8"
+                    android:background="#E0F6F1"
                     android:gravity="top|start"
                     android:inputType="textMultiLine"
                     android:lines="5"
