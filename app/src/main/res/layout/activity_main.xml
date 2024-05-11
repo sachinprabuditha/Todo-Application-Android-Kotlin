@@ -37,7 +37,7 @@
                 android:layout_below="@id/welcomeTxt"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="4dp"
-                android:text="Today's Task"
+                android:text="Here is Your Tasks"
                 android:textColor="@color/blue"
                 android:textSize="28sp"
                 android:textStyle="bold" />

@@ -299,7 +299,7 @@ class MainActivity : AppCompatActivity() {
         mainBinding.sortImg.setOnClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle("Sort By")
-                .setPositiveButton("Ok") { _, _ ->
+                .setPositiveButton("OK") { _, _ ->
                     when (checkedItem) {
                         0 -> {
                             taskViewModel.setSortBy(Pair("title",true))
