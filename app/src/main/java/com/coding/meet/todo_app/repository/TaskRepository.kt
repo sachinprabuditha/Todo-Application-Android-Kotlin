@@ -23,16 +23,15 @@ class TaskRepository(application: Application) {
 
     private val taskDao = TaskDatabase.getInstance(application).taskDao
 
-
     // Task State Flow
     private val _taskStateFlow = MutableStateFlow<Resource<Flow<List<Task>>>>(Loading())
     val taskStateFlow: StateFlow<Resource<Flow<List<Task>>>>
         get() = _taskStateFlow
 
+    // Status LiveData
     private val _statusLiveData = MutableLiveData<Resource<StatusResult>>()
     val statusLiveData: LiveData<Resource<StatusResult>>
         get() = _statusLiveData
-
 
     // Sort By LiveData
     private val _sortByLiveData = MutableLiveData<Pair<String,Boolean>>().apply {
@@ -64,7 +63,6 @@ class TaskRepository(application: Application) {
         }
     }
 
-
     // Insert Task
     fun insertTask(task: Task) {
         try {
@@ -77,7 +75,6 @@ class TaskRepository(application: Application) {
             _statusLiveData.postValue(Error(e.message.toString()))
         }
     }
-
 
     // Delete Task
     fun deleteTask(task: Task) {
@@ -106,7 +103,6 @@ class TaskRepository(application: Application) {
             _statusLiveData.postValue(Error(e.message.toString()))
         }
     }
-
 
     // Update Task
     fun updateTask(task: Task) {
@@ -148,7 +144,6 @@ class TaskRepository(application: Application) {
             }
         }
     }
-
 
     // Handle Result
     private fun handleResult(result: Int, message: String, statusResult: StatusResult) {
