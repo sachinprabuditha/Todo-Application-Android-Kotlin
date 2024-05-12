@@ -87,7 +87,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp"
                 android:backgroundTint="@color/blue"
-                android:text="Update Task"
+                android:text="Save Updates"
                 android:textSize="20sp" />
         </LinearLayout>
     </RelativeLayout>
