@@ -1,4 +1,4 @@
-## TODO/Note App By Sachin Prabuditha | Room DB | Android Studio Kotlin
+## TODO/Note App By Sachin Prabuditha | Room DB | Android Studio - Kotlin
 <br><h3>Application UI Screenshots</h3><br>
 
 <p><img src="ToDo App Screenshots/Screenshot_20240512_004522.png" width="300"/>&ensp; &ensp;
